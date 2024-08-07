@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Aulia Safira Putri",
+    "photo": "https://cdn.pixabay.com/photo/2024/02/18/09/00/ai-generated-8580798_1280.jpg",
+    "testimonial": "Pelayanan di Rutan Wonosobo sungguh luar biasa. Sistem terpadu mereka membuat segala proses menjadi lebih efisien dan mudah untuk diakses.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Salsabila Aisyah Dewi",
+    "photo": "https://cdn.pixabay.com/photo/2022/03/19/11/11/girl-7078324_1280.jpg",
+    "testimonial": "Saya sangat terkesan dengan sistem layanan terpadu di Rutan Wonosobo. Semua informasi dan layanan yang saya butuhkan tersedia dengan cepat dan akurat.",
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "name": "Zahra Amalia Puspita",
+    "photo": "https://cdn.pixabay.com/photo/2024/02/18/09/00/ai-generated-8580799_960_720.jpg",
+    "testimonial": "Rutan Wonosobo benar-benar memahami kebutuhan pengguna layanannya. Sistem terpadu mereka membantu saya menyelesaikan berbagai administrasi dengan lancar.",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "Rania Putri Kirana",
+    "photo": "https://cdn.pixabay.com/photo/2022/02/07/14/22/woman-6999505_1280.jpg",
+    "testimonial": "Aplikasi ini sangat membantu dalam mengelola data dan meningkatkan efisiensi operasional. Desain yang intuitif dan mudah digunakan.",
+    "rating": 4
+  },
+  {
+    "id": 5,
+    "name": "Farah Nurul Hikmah",
+    "photo": "https://cdn.pixabay.com/photo/2021/09/22/13/51/woman-6646904_1280.jpg",
+    "testimonial": "Sistem layanan terpadu di Rutan Wonosobo sungguh mempermudah hidup saya. Semua proses dari pendaftaran hingga pelaporan dapat dilakukan dengan mudah dan cepat.",
+    "rating": 5
+  }
+]

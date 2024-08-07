@@ -1,0 +1,16 @@
+const metadata = {
+  title: 'SAYAP TAWON - SISTEM LAYANAN TERPADU RUTAN WONOSOBO',
+  description: 'Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform. Sistem ini bertujuan untuk memudahkan masyarakat dalam mengakses layanan publik di Rutan Wonosobo, meningkatkan kualitas pelayanan publik, dan mewujudkan transparansi dan akuntabilitas penyelenggaraan layanan publik di Rutan Wonosobo.',
+  keywords: 'SAYAP TAWON, Rutan Wonosobo, layanan publik',
+  robots: 'index, follow',
+  icon: '/favicon.svg',
+  ogImage: '/thumbnail.png',
+  canonicalUrl: 'https://rutanwonosobo.github.io/',
+  author: 'Humas Rutan Wonosobo',
+  themeColor: '#1f2937',
+  lang: 'id',
+  charset: 'utf-8',
+  viewport: 'width=device-width, initial-scale=1',
+};
+
+export default metadata;

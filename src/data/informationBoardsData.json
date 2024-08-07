@@ -1,0 +1,45 @@
+{
+  "informationBoards": [
+    {
+      "title": "Jam Layanan",
+      "data": [
+        {
+          "day": "Senin - Kamis",
+          "hours": [
+            "08.00 - 11.00 WIB (PAGI)",
+            "13.00 - 14.00 WIB (SIANG)"
+          ]
+        },
+        {
+          "day": "Jum'at & Sabtu",
+          "hours": [
+            "08.30 - 11.00 WIB"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Hari Kunjungan",
+      "data": [
+        {
+          "day": "Selasa & Kamis",
+          "description": [
+            "Tahanan"
+          ]
+        },
+        {
+          "day": "Senin & Rabu",
+          "description": [
+            "Narapidana"
+          ]
+        },
+        {
+          "day": "Jum'at & Sabtu",
+          "description": [
+            "Khusus Napi Narkotika"
+          ]
+        }
+      ]
+    }
+  ]
+}

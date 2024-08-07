@@ -1,0 +1,22 @@
+[
+  {
+    "href": "/about",
+    "label": "About"
+  },
+  {
+    "href": "/contact",
+    "label": "Contact"
+  },
+  {
+    "href": "/disclaimer",
+    "label": "Disclaimer"
+  },
+  {
+    "href": "/privacy-policy",
+    "label": "Privacy Policy"
+  },
+  {
+    "href": "/terms-conditions",
+    "label": "Terms and Conditions"
+  }
+]

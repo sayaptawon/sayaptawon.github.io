@@ -1,0 +1,17 @@
+{
+  "data": [
+    {
+      "type": "Tahanan",
+      "male": 55,
+      "female": 2,
+      "total": 57
+    },
+    {
+      "type": "Narapidana",
+      "male": 99,
+      "female": 0,
+      "total": 99
+    }
+  ],
+  "total": 156
+}
