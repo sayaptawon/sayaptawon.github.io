@@ -55,7 +55,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --force
       - name: Build with Next.js
         run: npm run build
       - name: Upload artifact
