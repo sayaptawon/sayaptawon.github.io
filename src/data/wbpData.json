@@ -2,9 +2,9 @@
   "data": [
     {
       "type": "Tahanan",
-      "male": 55,
+      "male": 58,
       "female": 2,
-      "total": 57
+      "total": 60
     },
     {
       "type": "Narapidana",
@@ -13,5 +13,5 @@
       "total": 99
     }
   ],
-  "total": 156
+  "total": 159
 }
