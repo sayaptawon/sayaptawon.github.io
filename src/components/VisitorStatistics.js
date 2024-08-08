@@ -1,7 +1,7 @@
-'use client';
+// src/components/VisitorStatistics.js
 
 import React, { useEffect, useState } from 'react';
-import { database, ref, onValue, update } from '../lib/firebaseConfig';
+import { database, ref, onValue, update } from '@/lib/firebaseConfig';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay, faCalendarAlt, faCalendarWeek, faCalendar, faUsers } from '@fortawesome/free-solid-svg-icons';
 
@@ -23,7 +23,7 @@ const VisitorStatistics = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const isLocalhost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+      const isLocalhost = window.location.hostname === '' || window.location.hostname === 'localhost';
 
       if (!isLocalhost) {
         recordNewVisit();
@@ -41,18 +41,15 @@ const VisitorStatistics = () => {
       if (currentData) {
         const lastVisit = currentData.lastVisit || todayDate;
 
-        // Reset data harian jika tanggal berbeda
         if (lastVisit !== todayDate) {
           currentData.yesterday = currentData.today || 0;
           currentData.today = 0;
         }
 
-        // Reset data mingguan jika awal minggu berbeda
         if (lastVisit < weekStartDate) {
           currentData.thisWeek = 0;
         }
 
-        // Reset data bulanan jika awal bulan berbeda
         if (lastVisit < monthStartDate) {
           currentData.thisMonth = 0;
         }
