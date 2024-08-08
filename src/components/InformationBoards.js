@@ -12,8 +12,8 @@ const InformationBoards = () => {
   }, []);
 
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
-      <div className='grid gap-6 md:grid-cols-2'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
+      <div className='grid gap-6 md:grid-cols-2 mb-4'>
         {/* Tabel Jam Layanan */}
         <div className='card bg-white'>
           {loading ? (
@@ -28,7 +28,7 @@ const InformationBoards = () => {
             </div>
           ) : (
             <>
-              <h3 className='text-lg md:text-xl font-semibold text-secondary mb-8 text-center'>{data.informationBoards[0].title}</h3>
+              <h3 className='text-lg md:text-xl font-semibold text-primary mb-8 text-center'>{data.informationBoards[0].title}</h3>
               <div className='overflow-x-auto shadow'>
                 <table className='table w-full table-fixed'>
                   <thead className='bg-primary text-white'>
@@ -70,7 +70,7 @@ const InformationBoards = () => {
             </div>
           ) : (
             <>
-              <h3 className='text-lg md:text-xl font-semibold text-secondary mb-8 text-center'>{data.informationBoards[1].title}</h3>
+              <h3 className='text-lg md:text-xl font-semibold text-primary mb-8 text-center'>{data.informationBoards[1].title}</h3>
               <div className='overflow-x-auto shadow'>
                 <table className='table w-full table-fixed'>
                   <thead className='bg-primary text-white'>

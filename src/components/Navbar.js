@@ -38,8 +38,8 @@ const Navbar = ({ isOpen, setIsOpen }) => {
   const activeLink = (href) => (pathname === href ? 'bg-primary text-neutral' : '');
 
   return (
-    <nav data-theme='night' className='shadow-lg sticky top-0 z-50'>
-      <div className='container mx-auto flex items-center justify-between p-4'>
+    <nav data-theme='night' className='shadow sm:shadow-sm md:shadow-md lg:shadow-lg sticky top-0 z-50'>
+      <div className='container-fluid mx-auto flex items-center justify-between p-4'>
         <a href='/' className='text-xl font-bold btn btn-neutral'>
           {navbarData.brand}
         </a>

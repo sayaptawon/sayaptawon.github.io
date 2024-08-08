@@ -30,18 +30,17 @@ const Contact = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Simulate loading delay
     const timer = setTimeout(() => {
       setIsLoaded(true);
-    }, 500); // Adjust delay as needed
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
-      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Contact Us</h2>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
+      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6 text-center'>Contact Us</h2>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-4'>
         {isLoaded
           ? contactData.map((section, index) => (
               <div key={index} className='card bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-md transition-shadow duration-500 ease-in-out transform hover:shadow-xl hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500'>

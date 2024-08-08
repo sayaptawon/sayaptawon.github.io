@@ -44,9 +44,9 @@ const ListService = () => {
   }, []);
 
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>List of Services</h2>
-      <div data-theme='light' className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+      <div data-theme='light' className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-4'>
         {services.map((service, index) => (
           <Link href={service.link} key={index}>
             <div className='group card bg-base-100 shadow-lg border border-gray-200 transition-transform duration-300 ease-in-out hover:shadow-xl hover:bg-opacity-75 hover:bg-gradient-to-r hover:from-blue-500 hover:to-teal-500 hover:text-white p-6 rounded-lg h-full flex flex-col'>

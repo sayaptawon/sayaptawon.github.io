@@ -17,8 +17,8 @@ import BackToTop from '@/components/BackToTop';
 
 const Home = () => {
   return (
-    <div data-theme='night' className='container-fluid mx-auto p-4 sm:p-6 lg:p-8'>
-      <div className='bg-white text-primary-content shadow-lg rounded-lg overflow-hidden'>
+    <div data-theme='night' className='container-fluid mx-auto'>
+      <div className='bg-white text-primary-content overflow-hidden'>
         <Header />
         <StatisticsWBP />
         <InformationBoards />

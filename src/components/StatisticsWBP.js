@@ -12,9 +12,9 @@ const StatisticsWBP = () => {
   }, []);
 
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Information Boards</h2>
-      <div className='card shadow bg-white'>
+      <div className='card shadow bg-white mb-4'>
         <div className='overflow-x-auto'>
           {loading ? (
             <div className='p-4'>

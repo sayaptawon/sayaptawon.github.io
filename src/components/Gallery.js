@@ -12,7 +12,7 @@ const Gallery = () => {
 
   useEffect(() => {
     setImages(galleryData);
-    setLoading(false); // Set loading to false after data is set
+    setLoading(false);
   }, []);
 
   const openImage = (index) => {
@@ -24,20 +24,20 @@ const Gallery = () => {
   };
 
   const prevImage = (e) => {
-    e.stopPropagation(); // Prevent close when clicking the button
+    e.stopPropagation();
     setSelectedIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
   const nextImage = (e) => {
-    e.stopPropagation(); // Prevent close when clicking the button
+    e.stopPropagation();
     setSelectedIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 
   return (
-    <section data-theme='corporate' className='gallery-container p-6 max-w-7xl mx-auto border-b border-gray-200'>
+    <section data-theme='corporate' className='gallery-container p-4 mx-auto border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Gallery</h2>
       {loading ? (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4'>
           {Array.from({ length: 8 }).map((_, index) => (
             <div key={index} className='relative group overflow-hidden rounded-lg shadow-lg transition-transform duration-300'>
               <div className='w-full h-64 bg-gray-200 rounded-lg skeleton'></div>
@@ -48,7 +48,7 @@ const Gallery = () => {
           ))}
         </div>
       ) : (
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4'>
           {images.map((image, index) => (
             <div key={index} className='relative group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer' onClick={() => openImage(index)}>
               <img

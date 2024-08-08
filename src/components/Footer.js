@@ -5,7 +5,7 @@ import footerLinks from '@/data/footerLinks.json';
 
 export default function Footer () {
   return (
-    <footer className='bg-gray-800 text-white py-6'>
+    <footer className='px-4 bg-gray-800 text-white py-6'>
       {/* Bagian Menu */}
       <nav className='mb-4'>
         <ul className='flex flex-wrap justify-center gap-2 md:gap-3 lg:gap-4'>

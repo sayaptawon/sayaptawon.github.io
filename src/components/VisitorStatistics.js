@@ -103,7 +103,7 @@ const VisitorStatistics = () => {
 
   if (loading) {
     return (
-      <section data-theme='corporate' className='p-6 border-b border-gray-200'>
+      <section data-theme='corporate' className='p-4 border-b border-gray-200'>
         <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Visitor Statistics</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6'>
           {Array(5)
@@ -125,9 +125,9 @@ const VisitorStatistics = () => {
   }
 
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Visitor Statistics</h2>
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-4'>
         <StatisticCard label='Hari Ini' value={statistics.today || 0} icon={faCalendarDay} />
         <StatisticCard label='Kemarin' value={statistics.yesterday || 0} icon={faCalendarAlt} />
         <StatisticCard label='Minggu Ini' value={statistics.thisWeek || 0} icon={faCalendarWeek} />
