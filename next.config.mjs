@@ -9,11 +9,9 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    // Diaktifkan jika Anda memerlukan fitur eksperimen
-    // misalnya, reactRoot atau serverComponents
-  },
-  reactStrictMode: true, // Aktifkan React Strict Mode untuk pengujian yang lebih ketat
+  reactStrictMode: true,
+  output: 'standalone',
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;
