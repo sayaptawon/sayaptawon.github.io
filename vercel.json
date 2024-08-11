@@ -1,9 +1,15 @@
 {
+  "version": 1,
   "builds": [
     {
       "src": "package.json",
-      "use": "@vercel/node"
+      "use": "@vercel/next"
     }
   ],
-  "buildCommand": "npm install --legacy-peer-deps && next build"
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ]
 }
