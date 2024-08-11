@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --experimental-https --turbo --force",
-    "build": "next build --force",
-    "start": "next start --force",
-    "lint": "next lint --force",
-    "postinstall": "next telemetry disable --force"
+    "dev": "next dev --experimental-https --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "next telemetry disable"
   },
   "dependencies": {
     "@firebase/app": "^0.10.8",
