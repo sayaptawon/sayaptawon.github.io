@@ -10,7 +10,8 @@ import Gallery from '@/components/Gallery';
 import Locations from '@/components/Locations';
 import VisitorStatistics from '@/components/VisitorStatistics';
 import Testimonial from '@/components/Testimonial';
-import Contact from '@/components/Contact';
+import CallToAction from '@/components/CallToAction';
+import Team from '@/components/Team';
 import Notification from '@/components/Notification';
 import BubbleMessage from '@/components/BubbleMessage';
 import BackToTop from '@/components/BackToTop';
@@ -28,7 +29,8 @@ const Home = () => {
         <Locations />
         <VisitorStatistics />
         <Testimonial />
-        <Contact />
+        <CallToAction />
+        <Team />
         <Notification />
         <BubbleMessage />
         <BackToTop />
