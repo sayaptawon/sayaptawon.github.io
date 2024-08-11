@@ -13,7 +13,6 @@ import metadata from '@/config/metadata';
 const Layout = ({ children, title = metadata.title, description = metadata.description }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Tambahkan sufiks ke title
   const fullTitle = `${title} - SAYAP TAWON`;
 
   return (
