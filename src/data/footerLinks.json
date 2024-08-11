@@ -1,22 +1,30 @@
 [
   {
     "href": "/about",
-    "label": "About"
+    "label": "Tentang Kami"
+  },
+  {
+    "href": "/about-aplication",
+    "label": "Tentang Aplikasi"
   },
   {
     "href": "/contact",
-    "label": "Contact"
-  },
-  {
-    "href": "/disclaimer",
-    "label": "Disclaimer"
+    "label": "Kontak Kami"
   },
   {
     "href": "/privacy-policy",
-    "label": "Privacy Policy"
+    "label": "Kebijakan Privasi"
   },
   {
     "href": "/terms-conditions",
-    "label": "Terms and Conditions"
+    "label": "Syarat dan Ketentuan"
+  },
+  {
+    "href": "/download",
+    "label": "Unduh"
+  },
+  {
+    "href": "/disclaimer",
+    "label": "Pernyataan"
   }
 ]

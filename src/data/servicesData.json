@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Kunjungan dan Penitipan Barang",
+    "description": "Pelayanan kunjungan dan penitipan barang untuk warga binaan.",
+    "link": "/kunjungan-penitipan-barang"
+  },
+  {
+    "title": "Reintegrasi Sosial",
+    "description": "Program reintegrasi sosial untuk membantu warga binaan kembali ke masyarakat.",
+    "link": "/reintegrasi-sosial"
+  },
+  {
+    "title": "Kesehatan",
+    "description": "Layanan kesehatan untuk menjaga kesehatan warga binaan.",
+    "link": "/kesehatan"
+  },
+  {
+    "title": "Bantuan Hukum",
+    "description": "Bantuan hukum bagi warga binaan yang memerlukan pendampingan hukum.",
+    "link": "/bantuan-hukum"
+  }
+]
