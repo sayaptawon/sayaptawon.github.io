@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '@/pages/layout';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCog, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -40,19 +41,22 @@ function BantuanHukum () {
 
         {/* Konten Utama */}
         <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify mb-6'>
+          <Image src='/legal-aid.webp' alt='Bantuan Hukum' width={1200} height={600} className='w-full rounded-lg shadow' />
           <p>Kemenkumham melalui BPHN memberikan layanan bantuan hukum. Pemberian Bantuan Hukum kepada warga negara merupakan wujud nyata dari implementasi negara kita sebagai negara hukum. Negara yang mengakui dan melindungi serta menjamin hak asasi warga negara akan kebutuhan akses seluas-luasnya terhadap keadilan, dan kesamaan di hadapan hukum.</p>
         </div>
 
-        {/* Modern Tab Navigation */}
-        <div className='mb-6'>
-          <div className='grid grid-cols-2 gap-4'>
-            <div className={`btn rounded-lg shadow-md hover:bg-accent hover:text-gray-900 ${activeTab === 'mekanisme' ? 'bg-primary text-white' : 'bg-neutral text-white'}`} onClick={() => setActiveTab('mekanisme')}>
-              {iconsLoaded && <FontAwesomeIcon icon={faCog} className='text-xl mr-3' />}
-              <span className='text-sm sm:text-base'>Mekanisme</span>
+        {/* Modern Icon Box Tabs */}
+        <div className='flex justify-center mb-6'>
+          <div className='flex gap-4'>
+            <div className={`flex flex-col items-center p-4 rounded-lg border ${activeTab === 'mekanisme' ? 'bg-primary text-white border-primary' : 'bg-neutral text-gray-700 border-gray-300'} transition-all duration-300 cursor-pointer hover:bg-primary hover:text-white`} onClick={() => setActiveTab('mekanisme')}>
+              <div className='w-16 h-16 flex items-center justify-center bg-white text-primary rounded-full shadow-md mb-2'>{iconsLoaded && <FontAwesomeIcon icon={faCog} className='text-2xl' />}</div>
+              <span className='text-sm font-semibold'>Mekanisme</span>
+              <div className={`w-full h-1 mt-2 transition-all duration-300 ${activeTab === 'mekanisme' ? 'bg-primary' : 'bg-transparent'}`}></div>
             </div>
-            <div className={`btn rounded-lg shadow-md hover:bg-accent hover:text-gray-900 ${activeTab === 'syarat' ? 'bg-primary text-white' : 'bg-neutral text-white'}`} onClick={() => setActiveTab('syarat')}>
-              {iconsLoaded && <FontAwesomeIcon icon={faFileAlt} className='text-xl mr-3' />}
-              <span className='text-sm sm:text-base'>Syarat</span>
+            <div className={`flex flex-col items-center p-4 rounded-lg border ${activeTab === 'syarat' ? 'bg-primary text-white border-primary' : 'bg-neutral text-gray-700 border-gray-300'} transition-all duration-300 cursor-pointer hover:bg-primary hover:text-white`} onClick={() => setActiveTab('syarat')}>
+              <div className='w-16 h-16 flex items-center justify-center bg-white text-primary rounded-full shadow-md mb-2'>{iconsLoaded && <FontAwesomeIcon icon={faFileAlt} className='text-2xl' />}</div>
+              <span className='text-sm font-semibold'>Syarat</span>
+              <div className={`w-full h-1 mt-2 transition-all duration-300 ${activeTab === 'syarat' ? 'bg-primary' : 'bg-transparent'}`}></div>
             </div>
           </div>
         </div>
@@ -61,7 +65,7 @@ function BantuanHukum () {
         <div className='card card-bordered p-4 bg-base-100 shadow-md'>
           {activeTab === 'mekanisme' && (
             <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify'>
-              <h2 className='card-title text-xl font-semibold mb-2'>Mekanisme Pemberian Bantuan Hukum</h2>
+              <h2 className='text-center text-xl font-semibold mb-2'>Mekanisme Pemberian Bantuan Hukum</h2>
               <p>
                 Pemberian Bantuan Hukum dilakukan dengan bekerja sama dengan Organisasi Bantuan Hukum yang telah terakreditasi. Anda dapat melihat OBH terdekat dari wilayah anda{' '}
                 <a href='https://bphn.go.id/layanan/bantuan-hukum/obh' target='_blank' className='text-blue-500 underline'>
@@ -73,7 +77,7 @@ function BantuanHukum () {
           )}
           {activeTab === 'syarat' && (
             <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify'>
-              <h2 className='card-title text-xl font-semibold mb-2'>Syarat</h2>
+              <h2 className='text-center text-xl font-semibold mb-2'>Syarat</h2>
               <ul className='list-disc list-inside'>
                 <li>Mengajukan permohonan secara lisan atau tertulis yang berisi sekurang-kurangnya identitas pemohon dan uraian singkat mengenai pokok persoalan yang dimohonkan bantuan hukum;</li>
                 <li>Menyerahkan dokumen yang berkenaan dengan perkara;</li>

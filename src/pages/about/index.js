@@ -70,7 +70,7 @@ const About = () => {
   ];
 
   return (
-    <Layout title='ABOUT' description='Temukan lebih lanjut tentang visi, misi, dan layanan yang kami tawarkan di Rutan Wonosobo.'>
+    <Layout title='Tentang Kami' description='Temukan lebih lanjut tentang visi, misi, dan layanan yang kami tawarkan di Rutan Wonosobo.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
