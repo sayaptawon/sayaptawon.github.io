@@ -1,12 +1,3 @@
 {
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "npm": {
-      "args": [
-        "--legacy-peer-deps"
-      ]
-    }
-  }
+  "buildCommand": "npm install --force && next build"
 }
