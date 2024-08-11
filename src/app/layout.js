@@ -50,6 +50,9 @@ export default function RootLayout ({ children }) {
           }
           `}
         </script>
+
+        {/* Permissions-Policy Meta Tag */}
+        <meta httpEquiv='Permissions-Policy' content='interest-cohort=()' />
       </head>
       <body>
         {/* Navbar */}
