@@ -19,6 +19,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.12.10",
+    "date-fns": "^3.6.0",
     "firebase": "^10.12.5",
     "next": "^15.0.0-rc.0",
     "postcss": "^8.4.40",
@@ -28,7 +29,7 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
-    "eslint": "^9.8.0",
+    "eslint": "^9.9.0",
     "eslint-config-next": "14.2.5"
   }
 }
