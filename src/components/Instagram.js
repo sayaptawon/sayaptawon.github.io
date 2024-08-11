@@ -4,7 +4,6 @@ const Instagram = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Tambahkan script RSS saat komponen dimuat
     const script = document.createElement('script');
     script.src = 'https://widget.rss.app/v1/wall.js';
     script.async = true;

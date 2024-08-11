@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className='text-center p-8 bg-gradient-to-r from-blue-500 to-teal-500 text-white'>
-      <div className='flex justify-center'>{loading ? <div className='w-36 h-36 skeleton mask mask-hexagon-2 shadow-lg'></div> : <Image src={headerData.image.src} alt={headerData.image.alt} width={headerData.image.width} height={headerData.image.height} className='bg-neutral mask mask-hexagon-2 shadow-lg pl-3' />}</div>
+      <div className='flex justify-center'>{loading ? <div className='w-36 h-36 skeleton mask mask-hexagon-2 shadow-lg'></div> : <Image src={headerData.image.src} alt={headerData.image.alt} width={headerData.image.width} height={headerData.image.height} className='bg-neutral mask mask-hexagon-2 shadow-lg pl-3' priority/>}</div>
 
       <div className='mt-4'>
         {loading ? <div className='w-3/4 h-10 skeleton mx-auto rounded'></div> : <h1 className='uppercase text-4xl md:text-5xl lg:text-6xl font-bold mt-4'>{headerData.title}</h1>}

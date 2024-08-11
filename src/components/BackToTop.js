@@ -6,10 +6,20 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function BackToTop () {
   const [showButton, setShowButton] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      setShowButton(window.scrollY > 300);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setShowButton(window.scrollY > 300);
+          setLastScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -22,7 +32,7 @@ export default function BackToTop () {
 
   return (
     <section data-theme='light'>
-      <button onClick={handleClick} className={`fixed bottom-4 right-4 p-3 btn btn-circle border-none bg-primary text-white shadow-lg transition-transform transform duration-300 ease-in-out hover:bg-blue-700 hover:shadow-xl z-40 ${showButton ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 translate-y-12'}`} aria-label='Back to top' role='button'>
+      <button onClick={handleClick} className={`fixed bottom-4 right-2 p-3 btn btn-circle border-none bg-primary text-white shadow-lg transition-transform duration-300 ease-in-out hover:bg-blue-700 hover:shadow-xl z-40 ${showButton ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-75 translate-y-12'}`} aria-label='Back to top' role='button'>
         <FontAwesomeIcon icon={faArrowUp} size='lg' />
       </button>
     </section>

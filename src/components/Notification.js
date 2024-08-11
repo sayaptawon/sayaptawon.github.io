@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faExclamationCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
 import notificationData from '@/data/notificationData.json';
@@ -11,6 +11,7 @@ const Notification = () => {
   const [showNoNotificationModal, setShowNoNotificationModal] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
   const modalRef = useRef();
+  const shakeIntervalRef = useRef();
 
   useEffect(() => {
     const loadNotifications = async () => {
@@ -21,43 +22,52 @@ const Notification = () => {
     loadNotifications();
   }, []);
 
+  const startShaking = useCallback(() => {
+    shakeIntervalRef.current = setInterval(() => {
+      setIsShaking(true);
+      setTimeout(() => setIsShaking(false), 1000);
+    }, 5000);
+  }, []);
+
+  const stopShaking = useCallback(() => {
+    clearInterval(shakeIntervalRef.current);
+  }, []);
+
   useEffect(() => {
-    const startShaking = () => {
-      setTimeout(() => {
-        const shakeInterval = setInterval(() => {
-          setIsShaking(true);
-          setTimeout(() => setIsShaking(false), 1000); // Duration of shake animation
-        }, 5000); // Delay between shakes
-
-        return () => clearInterval(shakeInterval);
-      }, 5000); // Initial delay of 5 seconds
-    };
-
     if (!isModalOpen) {
       startShaking();
+    } else {
+      stopShaking();
     }
-  }, [isModalOpen]);
 
-  const handleNotificationClick = () => {
-    setIsShaking(false);
+    return () => {
+      stopShaking();
+    };
+  }, [isModalOpen, startShaking, stopShaking]);
+
+  const handleNotificationClick = useCallback(() => {
+    stopShaking();
     if (notifications.length === 0 || notifications.every((notification) => !notification.content)) {
       setShowNoNotificationModal(true);
     } else {
       setIsModalOpen(true);
     }
-  };
+  }, [notifications, stopShaking]);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
     setShowNoNotificationModal(false);
-    setIsShaking(true);
-  };
+    startShaking();
+  }, [startShaking]);
 
-  const handleClickOutside = (event) => {
-    if (modalRef.current && !modalRef.current.contains(event.target)) {
-      closeModal();
-    }
-  };
+  const handleClickOutside = useCallback(
+    (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        closeModal();
+      }
+    },
+    [closeModal],
+  );
 
   useEffect(() => {
     if (isModalOpen || showNoNotificationModal) {
@@ -69,7 +79,7 @@ const Notification = () => {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isModalOpen, showNoNotificationModal]);
+  }, [isModalOpen, showNoNotificationModal, handleClickOutside]);
 
   const shouldShowBadge = notifications.some((notification) => notification.content);
 
@@ -77,7 +87,7 @@ const Notification = () => {
     <section data-theme='light'>
       {/* Notification Button */}
       {notifications.length > 0 && (
-        <div className='fixed bottom-20 left-4 z-40'>
+        <div className='fixed bottom-20 left-2 z-40'>
           <button className='btn btn-circle btn-primary relative shadow-lg transition-transform duration-300 ease-in-out hover:shadow-2xl hover:bg-primary-focus' onClick={handleNotificationClick}>
             <FontAwesomeIcon icon={faBell} className={`text-xl text-white ${isShaking && shouldShowBadge ? 'animate-bell-shake' : ''}`} />
             {shouldShowBadge && (
