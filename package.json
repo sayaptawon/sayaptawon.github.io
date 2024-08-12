@@ -17,6 +17,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@vercel/speed-insights": "^1.0.12",
     "autoprefixer": "^10.4.19",
     "daisyui": "^4.12.10",
     "date-fns": "^3.6.0",

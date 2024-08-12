@@ -1,6 +1,7 @@
 'use client';
 
 import '@/styles/globals.css';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import metadata from '@/config/metadata';
@@ -55,6 +56,8 @@ export default function RootLayout ({ children }) {
         <meta httpEquiv='Permissions-Policy' content='interest-cohort=()' />
       </head>
       <body>
+        {/* SpeedInsights */}
+        <SpeedInsights />
         {/* Navbar */}
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
         {/* Main Content */}
