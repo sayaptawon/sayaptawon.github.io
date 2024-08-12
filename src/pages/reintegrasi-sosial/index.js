@@ -19,7 +19,11 @@ const ReintegrasiSosial = () => {
       return () => clearTimeout(timeoutId);
     };
 
-    window.addEventListener('load', handleLoad);
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
 
     return () => {
       window.removeEventListener('load', handleLoad);
@@ -27,14 +31,14 @@ const ReintegrasiSosial = () => {
   }, []);
 
   return (
-    <Layout title='REINTEGRASI SOSIAL' description='Informasi mengenai Program Reintegrasi Sosial oleh Rutan Wonosobo.'>
+    <Layout title='Reintegrasi Sosial' description='Informasi mengenai Program Reintegrasi Sosial oleh Rutan Wonosobo.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
           <ul className='flex flex-wrap items-center justify-center space-x-2 sm:space-x-4 text-sm breadcrumbs'>
             <li>
               <Link href='/' className='btn btn-circle inline-flex items-center px-4 py-2 bg-primary text-white hover:bg-neutral shadow'>
-                {isLoaded ? showIcon ? <FontAwesomeIcon icon={faHome} /> : <div className='loading w-5 h-5 border-4 border-gray-200 border-t-transparent rounded-full'></div> : <div className='loading w-5 h-5 border-4 border-gray-200 border-t-transparent rounded-full'></div>}
+                {isLoaded && showIcon ? <FontAwesomeIcon icon={faHome} /> : <div className='loading w-5 h-5 border-4 border-gray-200 border-t-transparent rounded-full'></div>}
               </Link>
             </li>
             <li>
@@ -49,7 +53,7 @@ const ReintegrasiSosial = () => {
 
         {/* Judul Halaman */}
         <header className='mb-6'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Program Reintegrasi Sosial</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Reintegrasi Sosial</h1>
         </header>
 
         <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify'>
@@ -60,7 +64,7 @@ const ReintegrasiSosial = () => {
           <ul className='list-none pl-0 space-y-2'>
             {['Memulihkan fungsi sosial individu dalam masyarakat', 'Membangun kembali hubungan yang harmonis dalam masyarakat', 'Mempersiapkan orang untuk kembali ke masyarakat setelah dibebaskan', 'Mencegah residivisme', 'Memberikan norma baru', 'Memperbaiki penyebab utama konflik dalam masyarakat'].map((text, index) => (
               <li key={index} className='flex items-center'>
-                {isLoaded ? showIcon ? <FontAwesomeIcon icon={faCheckCircle} className='text-green-500 mr-2' /> : <div className='loading w-5 h-5 border-4 border-green-300 border-t-transparent rounded-full mr-2'></div> : <div className='loading w-5 h-5 border-4 border-green-300 border-t-transparent rounded-full mr-2'></div>}
+                {isLoaded && showIcon ? <FontAwesomeIcon icon={faCheckCircle} className='text-green-500 mr-2' /> : <div className='loading w-5 h-5 border-4 border-green-300 border-t-transparent rounded-full mr-2'></div>}
                 {text}
               </li>
             ))}

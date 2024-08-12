@@ -15,11 +15,11 @@ const InformationBoards = () => {
     <section data-theme='corporate' className='p-4 border-b border-gray-200'>
       <div className='grid gap-6 md:grid-cols-2 mb-4'>
         {/* Tabel Jam Layanan */}
-        <div className='card bg-white'>
+        <div className='card bg-white shadow-md rounded-lg p-4'>
           {loading ? (
             <div className='p-4'>
               <div className='w-full h-8 skeleton mb-4'></div>
-              <div className='overflow-x-auto shadow'>
+              <div className='overflow-x-auto'>
                 <div className='w-full'>
                   <div className='h-10 skeleton mb-2'></div>
                   <div className='h-40 skeleton'></div>
@@ -28,13 +28,13 @@ const InformationBoards = () => {
             </div>
           ) : (
             <>
-              <h3 className='text-lg md:text-xl font-semibold text-primary mb-8 text-center'>{data.informationBoards[0].title}</h3>
-              <div className='overflow-x-auto shadow'>
+              <h3 className='text-lg md:text-xl font-semibold text-primary mb-4 text-center'>{data.informationBoards[0].title}</h3>
+              <div className='overflow-x-auto'>
                 <table className='table w-full table-fixed'>
                   <thead className='bg-primary text-white'>
                     <tr>
-                      <th className='py-3 px-4 rounded-tl-lg'>Hari</th>
-                      <th className='py-3 px-4 rounded-tr-lg'>Jam</th>
+                      <th className='py-3 px-4'>Hari</th>
+                      <th className='py-3 px-4'>Jam</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -57,11 +57,11 @@ const InformationBoards = () => {
           )}
         </div>
         {/* Tabel Hari Kunjungan */}
-        <div className='card bg-white'>
+        <div className='card bg-white shadow-md rounded-lg p-4'>
           {loading ? (
             <div className='p-4'>
               <div className='w-full h-8 skeleton mb-4'></div>
-              <div className='overflow-x-auto shadow'>
+              <div className='overflow-x-auto'>
                 <div className='w-full'>
                   <div className='h-10 skeleton mb-2'></div>
                   <div className='h-40 skeleton'></div>
@@ -70,13 +70,13 @@ const InformationBoards = () => {
             </div>
           ) : (
             <>
-              <h3 className='text-lg md:text-xl font-semibold text-primary mb-8 text-center'>{data.informationBoards[1].title}</h3>
-              <div className='overflow-x-auto shadow'>
+              <h3 className='text-lg md:text-xl font-semibold text-primary mb-4 text-center'>{data.informationBoards[1].title}</h3>
+              <div className='overflow-x-auto'>
                 <table className='table w-full table-fixed'>
                   <thead className='bg-primary text-white'>
                     <tr>
-                      <th className='py-3 px-4 rounded-tl-lg'>Hari</th>
-                      <th className='py-3 px-4 rounded-tr-lg'>Keterangan</th>
+                      <th className='py-3 px-4'>Hari</th>
+                      <th className='py-3 px-4'>Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>

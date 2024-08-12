@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faTwitter, faInstagram, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faTwitter, faInstagram, faGithub, faYoutube, faReact } from '@fortawesome/free-brands-svg-icons';
 import { usePathname } from 'next/navigation';
 import navbarData from '@/data/navbarData.json';
 import contactData from '@/data/contactData.json';
@@ -50,8 +50,9 @@ const Navbar = ({ isOpen, setIsOpen }) => {
 
   return (
     <nav data-theme='night' className='shadow-sm md:shadow-md lg:shadow-lg sticky top-0 z-50'>
-      <div className='container mx-auto flex items-center justify-between p-4'>
-        <a href='/' className='text-xl font-bold btn btn-neutral'>
+      <div className='container mx-auto flex items-center justify-between px-4 py-3'>
+        <a href='/' className='flex items-center text-xl font-bold btn btn-neutral'>
+          {iconsLoaded && <FontAwesomeIcon icon={faReact} size='lg' className='mr-2' />}
           {navbarData.brand}
         </a>
         {/* Mobile Navbar */}
@@ -74,7 +75,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
                   <li key={index} className='w-full'>
                     <a
                       href={link.href}
-                      className={`btn btn-primary font-bold w-full py-3 rounded-lg text-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary ${activeLink(link.href)}`}
+                      className={`block w-full font-bold py-3 rounded-lg text-center transition-colors duration-300 bg-primary hover:bg-gradient-to-r hover:from-primary hover:to-secondary text-neutral hover:text-white ${activeLink(link.href)}`}
                       onClick={() => {
                         setIsOpen(false);
                         window.location.href = link.href;
@@ -109,17 +110,13 @@ const Navbar = ({ isOpen, setIsOpen }) => {
                 </p>
                 <div className='flex justify-center space-x-4 mb-6'>
                   {socialMediaData.map((social, index) => (
-                    <a key={index} href={social.url} target='_blank' rel='noopener noreferrer' className='btn btn-circle btn-neutral text-white hover:bg-opacity-80' aria-label={social.name}>
+                    <a key={index} href={social.url} target='_blank' rel='noopener noreferrer' className='btn btn-circle btn-neutral text-white transition-all duration-300 hover:bg-gradient-to-r hover:from-primary hover:to-secondary' aria-label={social.name}>
                       {iconsLoaded ? <FontAwesomeIcon icon={socialIcons[social.name]} size='lg' /> : null}
                     </a>
                   ))}
                 </div>
               </div>
-              <footer className='w-full mt-6 border-t border-gray-600 border-opacity-50 py-4 text-center text-gray-400'>
-                © 2024 Humas Rutan Wonosobo
-                <br />
-                All Rights Reserved.
-              </footer>
+              <footer className='w-full mt-6 border-t border-gray-600 border-opacity-50 py-4 text-center text-gray-400'>Copyright © 2024 Humas Rutan Wonosobo</footer>
             </div>
           </div>
         </div>

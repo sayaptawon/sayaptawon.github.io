@@ -14,18 +14,17 @@ const Team = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Define the image style
   const imageStyle = {
     width: '96px',
     height: '96px',
     objectFit: 'cover',
-    objectPosition: 'top', // Ensure image is positioned from the top
+    objectPosition: 'top',
   };
 
   return (
     <section data-theme='corporate' className='p-4 border-b border-gray-200 mb-4'>
       <div className='text-center mb-8'>
-        <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Our Team</h2>
+        <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>Our Team</h2>
         <p className='text-lg text-base-content'>{loading ? <span className='skeleton h-6 w-1/2 mx-auto block'></span> : 'Ketahui lebih lanjut tentang orang-orang di balik proyek ini'}</p>
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>

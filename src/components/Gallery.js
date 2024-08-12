@@ -35,7 +35,7 @@ const Gallery = () => {
 
   return (
     <section data-theme='corporate' className='gallery-container p-4 mx-auto border-b border-gray-200'>
-      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Gallery</h2>
+      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>Gallery</h2>
       {loading ? (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4'>
           {Array.from({ length: 8 }).map((_, index) => (
@@ -50,14 +50,12 @@ const Gallery = () => {
       ) : (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4'>
           {images.map((image, index) => (
-            <div key={index} className='relative group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 cursor-pointer'>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className='w-full h-64 object-cover rounded-lg transition-opacity duration-300'
-                onLoad={() => setLoading(false)}
-                onError={() => setLoading(false)}
-              />
+            <div
+              key={index}
+              className='relative group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 cursor-pointer'
+              onClick={() => openImage(index)} // Pastikan fungsi ini dipanggil saat gambar diklik
+            >
+              <img src={image.src} alt={image.alt} className='w-full h-64 object-cover rounded-lg transition-opacity duration-300' onLoad={() => setLoading(false)} onError={() => setLoading(false)} />
               <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
                 <div className='absolute bottom-0 left-0 right-0 p-4 transition-transform duration-300 transform translate-y-full group-hover:translate-y-0'>
                   <p className='text-white text-center text-lg font-semibold'>{image.caption}</p>
@@ -69,10 +67,13 @@ const Gallery = () => {
       )}
 
       {selectedIndex !== null && (
-        <div className='modal modal-open fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-hidden' onClick={closeImage}>
+        <div
+          className='modal modal-open fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-hidden'
+          onClick={closeImage} // Tutup modal jika area luar modal diklik
+        >
           <div
             className='relative w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden mx-4 my-6 sm:mx-8 sm:my-12'
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()} // Hindari penutupan modal jika bagian dalam modal diklik
           >
             <button className='absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-colors duration-300 z-10' onClick={closeImage}>
               <FontAwesomeIcon icon={faTimes} className='text-lg' />

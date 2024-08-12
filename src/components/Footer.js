@@ -41,13 +41,13 @@ export default function Footer () {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {/* Tentang Kami */}
             <div className='flex flex-col'>
-              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2'>Tentang Kami</h4>
+              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Tentang Kami</h4>
               {isLoading ? <div className='skeleton w-full h-24'></div> : <p className='text-gray-400'>Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform.</p>}
             </div>
 
             {/* Kontak Kami */}
             <div className='flex flex-col'>
-              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2'>Kontak Kami</h4>
+              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Kontak Kami</h4>
               {isLoading ? (
                 <div className='space-y-2'>
                   <div className='skeleton w-full h-6'></div>
@@ -77,7 +77,7 @@ export default function Footer () {
 
             {/* Halaman */}
             <div className='flex flex-col'>
-              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2'>Halaman</h4>
+              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Halaman</h4>
               {isLoading ? (
                 <div className='space-y-2'>
                   <div className='skeleton w-full h-6'></div>
@@ -99,7 +99,7 @@ export default function Footer () {
 
             {/* Daftar Layanan */}
             <div className='flex flex-col'>
-              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2'>Layanan</h4>
+              <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Layanan</h4>
               {isLoading ? (
                 <div className='space-y-2'>
                   <div className='skeleton w-full h-6'></div>

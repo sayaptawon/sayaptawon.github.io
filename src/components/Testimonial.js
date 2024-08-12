@@ -12,7 +12,7 @@ const Testimonial = () => {
   const testimonials = testimonialsData;
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
 
     const interval = setInterval(() => {
       if (!loading) {
@@ -50,7 +50,7 @@ const Testimonial = () => {
 
   return (
     <section data-theme='corporate' className='relative p-4 border-b border-gray-200 w-full'>
-      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Testimonials</h2>
+      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>Testimonials</h2>
       <div className='relative w-full mb-4'>
         <div className='flex items-center justify-center w-full'>
           <button onClick={handlePrev} className='absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-300 transition-colors' aria-label='Previous testimonial'>

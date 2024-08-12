@@ -73,7 +73,7 @@ const VisitorStatistics = () => {
 
   return (
     <section data-theme='corporate' className='p-4 border-b border-gray-200'>
-      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-8 text-center'>Visitors</h2>
+      <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>Visitors</h2>
       <div className='stats stats-vertical lg:stats-horizontal w-full border border-gray-300 rounded-md mb-4'>
         <div className='stat place-items-center'>
           {isLoading ? (
