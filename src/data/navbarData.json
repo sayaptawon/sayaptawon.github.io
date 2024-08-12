@@ -2,15 +2,15 @@
   "brand": "SAYAP TAWON",
   "links": [
     {
-      "name": "Tentang",
+      "name": "About",
       "href": "/about"
     },
     {
-      "name": "Kontak",
+      "name": "Contact",
       "href": "/contact"
     },
     {
-      "name": "Pernyataan",
+      "name": "Disclaimer",
       "href": "/disclaimer"
     },
     {
