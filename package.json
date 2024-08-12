@@ -2,6 +2,7 @@
   "name": "sayaptawon.github.io",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --experimental-https --turbo",
     "build": "next build",
