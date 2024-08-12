@@ -6,23 +6,16 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function BackToTop () {
   const [showButton, setShowButton] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setShowButton(window.scrollY > 300);
-          setLastScrollY(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
+      window.requestAnimationFrame(() => {
+        setShowButton(window.scrollY > 300);
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

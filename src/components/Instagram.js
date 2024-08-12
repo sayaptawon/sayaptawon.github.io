@@ -20,15 +20,12 @@ const Instagram = () => {
     <section data-theme='corporate' className='mt-4 border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>Instagram Feeds</h2>
       {isLoading ? (
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-4 gap-4'>
-          {/* Skeleton Loader untuk Card */}
-          {[...Array(4)].map((_, index) => (
-            <div key={index} className='w-full h-80 bg-base-300 skeleton rounded-lg' style={{ margin: '0 auto' }}></div>
-          ))}
+        <div className='flex justify-center items-center h-80'>
+          <div className='loading loading-ring loading-lg'></div>
         </div>
       ) : (
         <div className='overflow-hidden rounded-lg'>
-          <rssapp-wall id='Hqi5QMYTYnjdiFQj'></rssapp-wall>
+          <rssapp-wall id='Hqi5QMYTYnjdiFQj' loading='lazy'></rssapp-wall>
         </div>
       )}
     </section>

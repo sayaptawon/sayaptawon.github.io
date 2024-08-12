@@ -12,7 +12,16 @@ export default function BubbleMessage () {
   const [isPageLoaded, setIsPageLoaded] = useState(false);
 
   useEffect(() => {
-    setIsPageLoaded(true);
+    const handleLoad = () => {
+      setIsPageLoaded(true);
+    };
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
   }, []);
 
   const handleChange = useCallback((event) => {
@@ -33,9 +42,7 @@ export default function BubbleMessage () {
       setIsSent(true);
       setFormData({ name: '', email: '', message: '' });
 
-      setTimeout(() => {
-        window.open(url, '_blank');
-      }, 3000);
+      window.open(url, '_blank');
     },
     [formData],
   );
