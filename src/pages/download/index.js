@@ -55,7 +55,7 @@ const DownloadPage = () => {
   };
 
   return (
-    <Layout title='DOWNLOAD' description='Download the Sayap Tawon app. Sistem Layanan Terpadu Rutan Wonosobo'>
+    <Layout title='Download Aplikasi' description='Download the Sayap Tawon app. Sistem Layanan Terpadu Rutan Wonosobo'>
       <div data-theme='light' className='min-h-screen flex items-center justify-center p-4 bg-base-200'>
         <div className='w-full max-w-screen-lg lg:max-w-screen-xl shadow-xl rounded-lg overflow-hidden flex flex-col lg:flex-row bg-base-100'>
           <div className='flex-shrink-0 flex items-center justify-center p-6 bg-neutral'>

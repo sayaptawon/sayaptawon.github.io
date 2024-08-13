@@ -6,7 +6,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const TermsAndConditions = () => {
   return (
-    <Layout title='TERMS AND CONDITIONS' description='Syarat dan Ketentuan penggunaan situs web kami yang harus dipatuhi oleh semua pengguna.'>
+    <Layout title='Syarat dan Ketentuan' description='Syarat dan Ketentuan penggunaan situs web kami yang harus dipatuhi oleh semua pengguna.'>
       <section data-theme='light' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
@@ -20,7 +20,7 @@ const TermsAndConditions = () => {
               <span className='text-gray-500'>/</span>
             </li>
             <li>
-              <span className='inline-flex items-center px-4 py-2 bg-base-200 rounded-full text-base-content font-semibold shadow'>Terms and Conditions</span>
+              <span className='inline-flex items-center px-4 py-2 bg-base-200 rounded-full text-base-content font-semibold shadow'>Syarat dan Ketentuan</span>
             </li>
           </ul>
           <div className='mt-4 border-t border-gray-300'></div>
@@ -28,7 +28,7 @@ const TermsAndConditions = () => {
 
         {/* Judul Halaman */}
         <header className='mb-6'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Terms and Conditions</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Syarat dan Ketentuan</h1>
         </header>
 
         <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify'>

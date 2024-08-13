@@ -7,7 +7,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Kesehatan = () => {
   return (
-    <Layout title='KESEHATAN' description='Informasi penting mengenai layanan kesehatan yang disediakan oleh Rutan Wonosobo.'>
+    <Layout title='Kesehatan' description='Informasi penting mengenai layanan kesehatan yang disediakan oleh Rutan Wonosobo.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
@@ -26,6 +26,11 @@ const Kesehatan = () => {
           </ul>
           <div className='mt-4 border-t border-gray-300'></div>
         </nav>
+
+        {/* Judul Halaman */}
+        <header className='mb-6'>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Kesehatan</h1>
+        </header>
 
         {/* Isi Halaman */}
         <div className='mb-6'>

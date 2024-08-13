@@ -92,7 +92,7 @@ const About = () => {
 
         {/* Judul Halaman */}
         <header className='mb-6'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>About</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Tentang Kami</h1>
         </header>
 
         {/* Gambar */}

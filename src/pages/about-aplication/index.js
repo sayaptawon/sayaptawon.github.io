@@ -7,7 +7,7 @@ import Team from '@/components/Team';
 
 const AboutApplication = () => {
   return (
-    <Layout title='About Application' description='Informasi mendetail tentang Sistem Layanan Terpadu Rutan Wonosobo, teknologi yang digunakan, dan tim pengembang.'>
+    <Layout title='Tentang Aplikasi' description='Informasi mendetail tentang Sistem Layanan Terpadu Rutan Wonosobo, teknologi yang digunakan, dan tim pengembang.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
@@ -29,7 +29,7 @@ const AboutApplication = () => {
 
         {/* Judul Halaman */}
         <header className='mb-6 text-center'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-4'>About Application</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4'>Tentang Aplikasi</h1>
         </header>
 
         {/* Konten */}

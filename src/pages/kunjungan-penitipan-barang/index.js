@@ -6,7 +6,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const KunjunganPenitipanBarang = () => {
   return (
-    <Layout title='KUNJUNGAN DAN PENITIPAN BARANG' description='Syarat dan Ketentuan Kunjungan dan Penitipan Barang di Rutan Wonosobo.'>
+    <Layout title='Kunjungan dan Penitipan Barang' description='Syarat dan Ketentuan Kunjungan dan Penitipan Barang di Rutan Wonosobo.'>
       <section data-theme='light' className='flex flex-col min-h-screen p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>

@@ -25,7 +25,7 @@ const Contact = () => {
   };
 
   return (
-    <Layout title='CONTACT' description='Hubungi kami untuk pertanyaan, masukan, atau informasi lebih lanjut melalui berbagai saluran komunikasi yang tersedia.'>
+    <Layout title='Hubungi Kami' description='Hubungi kami untuk pertanyaan, masukan, atau informasi lebih lanjut melalui berbagai saluran komunikasi yang tersedia.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
@@ -47,7 +47,7 @@ const Contact = () => {
 
         {/* Judul Halaman */}
         <header className='mb-6'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Contact</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Hubungi Kami</h1>
         </header>
 
         <p className='text-lg mb-8 text-center text-gray-600'>Kami senang mendengar dari Anda. Silakan isi formulir di bawah ini atau hubungi kami melalui WhatsApp.</p>

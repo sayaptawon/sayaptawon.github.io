@@ -14,7 +14,7 @@ function BantuanHukum () {
   }, []);
 
   return (
-    <Layout title='BANTUAN HUKUM' description='Pemberian Bantuan Hukum kepada warga negara sebagai wujud implementasi negara hukum.'>
+    <Layout title='Bantuan Hukum' description='Pemberian Bantuan Hukum kepada warga negara sebagai wujud implementasi negara hukum.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>

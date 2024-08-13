@@ -6,7 +6,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const PrivacyPolicy = () => {
   return (
-    <Layout title='PRIVACY POLICY' description='Kebijakan Privasi kami yang menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.'>
+    <Layout title='Kebijakan Privasi' description='Kebijakan Privasi kami yang menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi data pribadi Anda.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
@@ -28,7 +28,7 @@ const PrivacyPolicy = () => {
 
         {/* Judul Halaman */}
         <header className='mb-6'>
-          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Privacy Policy</h1>
+          <h1 className='text-3xl sm:text-4xl font-bold mb-4 text-center'>Kebijakan Privasi</h1>
         </header>
 
         {/* Isi Halaman */}

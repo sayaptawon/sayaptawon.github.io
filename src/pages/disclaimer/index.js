@@ -6,7 +6,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const Disclaimer = () => {
   return (
-    <Layout title='DISCLAIMER' description='Informasi penting mengenai penggunaan situs web ini dan batasan tanggung jawab kami.'>
+    <Layout title='Disclaimer' description='Informasi penting mengenai penggunaan situs web ini dan batasan tanggung jawab kami.'>
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
         {/* Breadcrumb */}
         <nav className='mb-6'>
