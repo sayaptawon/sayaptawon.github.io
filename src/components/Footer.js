@@ -81,7 +81,7 @@ export default function Footer () {
                     <Link href={service.link} className='text-gray-400 hover:text-white transition-colors duration-300'>
                       {service.title}
                     </Link>
-                    <p className='text-gray-500 text-sm'>{service.description}</p>
+                    <p className='text-gray-500 text-sm pl-6'>{service.description}</p>
                   </li>
                 ))}
               </ul>

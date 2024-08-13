@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '@/pages/layout';
 import Link from 'next/link';
-import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import Team from '@/components/Team';
 
 const AboutApplication = () => {
   return (
@@ -56,6 +56,7 @@ const AboutApplication = () => {
               <strong>GitHub</strong>: Platform untuk version control dan hosting kode sumber, memfasilitasi kolaborasi dan pembaruan proyek secara berkala.
             </li>
           </ul>
+          <Team />
           <p>
             Anda dapat mengakses kode sumber dan melihat perkembangan terbaru dari aplikasi ini di{' '}
             <a href='https://github.com/sayaptawon' className='text-primary hover:underline'>

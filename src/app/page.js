@@ -4,7 +4,6 @@ import React from 'react';
 import Header from '@/components/Header';
 import StatisticsWBP from '@/components/StatisticsWBP';
 import InformationBoards from '@/components/InformationBoards';
-import InstagramFeed from '@/components/Instagram';
 import ListService from '@/components/ListService';
 import Gallery from '@/components/Gallery';
 import Locations from '@/components/Locations';
@@ -23,7 +22,6 @@ const Home = () => {
         <Header />
         <StatisticsWBP />
         <InformationBoards />
-        <InstagramFeed />
         <ListService />
         <Gallery />
         <Locations />
