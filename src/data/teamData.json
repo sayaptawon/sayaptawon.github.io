@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Narya",
+    "role": "Direktur Kreatif",
+    "photo": "/narya.webp",
+    "description": "Narya adalah visioner kreatif di balik konsep awal dan arahan strategis aplikasi ini."
+  },
+  {
+    "name": "Eliyanto Sarage",
+    "role": "Pengembang Utama",
+    "photo": "/eliyantosarage.webp",
+    "description": "Eliyanto Sarage mengembangkan aplikasi dari awal hingga selesai, menerjemahkan visi kreatif menjadi produk yang sepenuhnya fungsional."
+  },
+  {
+    "name": "Fatikha Hayuningtyas",
+    "role": "Desainer UI/UX",
+    "photo": "/woman.png",
+    "description": "Fatikha Hayuningtyas bertanggung jawab untuk merancang antarmuka pengguna dan pengalaman pengguna, memastikan desain yang mulus dan intuitif."
+  },
+  {
+    "name": "Setyarifqi",
+    "role": "Pengembang Backend",
+    "photo": "/man.png",
+    "description": "Setyarifqi fokus pada pengembangan backend, mengelola logika sisi server dan integrasi database untuk aplikasi ini."
+  }
+]
