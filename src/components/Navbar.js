@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +23,6 @@ const Navbar = ({ isOpen, setIsOpen }) => {
   const [fontAwesomeLoaded, setFontAwesomeLoaded] = useState(false);
 
   useEffect(() => {
-    // Set Font Awesome loaded to true after component mounts
     setFontAwesomeLoaded(true);
   }, []);
 
