@@ -1,9 +1,7 @@
 {
   "image": {
     "src": "/logo.webp",
-    "alt": "Logo Sayap Tawon",
-    "width": 150,
-    "height": 150
+    "alt": "Logo Sayap Tawon"
   },
   "title": "Sayap Tawon",
   "description": "Sistem Layanan Terpadu Rutan Wonosobo"
