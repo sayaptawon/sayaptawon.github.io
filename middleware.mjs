@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
 
-// Middleware function to handle responses
-export function middleware(request) {
-  // Create a new response with default settings
+export function middleware (request) {
+  const url = request.nextUrl.clone();
   const response = NextResponse.next();
 
   // Retrieve the Permissions-Policy header from environment variables or set default values
@@ -12,10 +11,13 @@ export function middleware(request) {
   // Set security-related HTTP headers
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('X-Frame-Options', 'DENY');
-
-  // Add additional headers for security, if needed
   response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
   response.headers.set('Content-Security-Policy', "default-src 'self'; script-src 'self'; style-src 'self';");
+
+  // Check if the path is a valid route; if not, redirect to the 404 page
+  if (url.pathname !== '/' && !url.pathname.startsWith('/api') && !url.pathname.startsWith('/_next/static') && !url.pathname.startsWith('/_next/image') && !url.pathname.startsWith('/favicon.ico')) {
+    return NextResponse.rewrite(new URL('/not-found', request.url));
+  }
 
   return response;
 }
