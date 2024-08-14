@@ -1,5 +1,3 @@
-'use client';
-
 import '@/styles/globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navbar from '@/components/Navbar';
@@ -26,15 +24,18 @@ export default function RootLayout ({ children }) {
         {/* Open Graph Meta Tags */}
         <meta property='og:title' content={metadata.title} />
         <meta property='og:description' content={metadata.description} />
-        <meta property='og:image' content={metadata.ogImage} />
+        <meta property='og:image' content={metadata.ogImage.startsWith('http') ? metadata.ogImage : `/${metadata.ogImage}`} />
+        <meta property='og:image:width' content='1200' />
+        <meta property='og:image:height' content='630' />
         <meta property='og:url' content={metadata.canonicalUrl} />
         <meta property='og:type' content='website' />
+        <meta property='og:site_name' content='SAYAP TAWON' />
 
         {/* Twitter Card Meta Tags */}
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content={metadata.title} />
         <meta name='twitter:description' content={metadata.description} />
-        <meta name='twitter:image' content={metadata.ogImage} />
+        <meta name='twitter:image' content={metadata.ogImage.startsWith('http') ? metadata.ogImage : `/${metadata.ogImage}`} />
 
         {/* Canonical URL */}
         <link rel='canonical' href={metadata.canonicalUrl} />
