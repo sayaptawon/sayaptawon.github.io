@@ -45,7 +45,7 @@ const Gallery = () => {
   };
 
   const ImageModal = ({ images, selectedIndex, onClose, onPrev, onNext }) => (
-    <div className='modal modal-open fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 overflow-hidden' onClick={onClose}>
+    <div className='modal modal-open fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75' onClick={onClose}>
       <div className='relative w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden mx-4 my-6 sm:mx-8 sm:my-12' onClick={(e) => e.stopPropagation()}>
         <button aria-label='Close' className='absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-colors duration-300 z-10' onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} className='text-lg' />
@@ -55,7 +55,7 @@ const Gallery = () => {
             <FontAwesomeIcon icon={faChevronLeft} className='text-lg' />
           </button>
           <div className='w-full max-w-4xl aspect-[2/1] bg-gray-100 flex items-center justify-center relative'>
-            <img src={images[selectedIndex].src} alt={images[selectedIndex].alt} className='w-full h-full object-cover transition-opacity duration-300' />
+            <img src={images[selectedIndex].src} alt={images[selectedIndex].alt} className='w-full h-auto max-h-[80vh] object-cover transition-opacity duration-300' />
           </div>
           <button aria-label='Next image' className='absolute right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full text-white hover:bg-gray-700 transition-colors duration-300 z-10' onClick={onNext}>
             <FontAwesomeIcon icon={faChevronRight} className='text-lg' />
@@ -73,7 +73,7 @@ const Gallery = () => {
         {visibleImages.map((image, index) => (
           <div key={index} className='relative group overflow-hidden rounded-lg shadow-lg transition-transform duration-300 cursor-pointer' onClick={() => openImage(index)}>
             <div className='w-full h-64 relative'>
-              <img loading='lazy' src={image.src} alt={image.alt} className='w-full h-64 object-cover rounded-lg transition-opacity duration-300' />
+              <img loading='lazy' src={image.src} alt={image.alt} className='w-full h-64 object-cover rounded-lg transition-opacity duration-300' style={{ objectFit: 'cover' }} />
             </div>
             <div className='absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-80'>
               <div className='absolute bottom-0 left-0 right-0 p-4 transition-transform duration-300 transform translate-y-full group-hover:translate-y-0'>

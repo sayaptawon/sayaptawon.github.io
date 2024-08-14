@@ -31,13 +31,13 @@ export default function Footer () {
         <div className='container mx-auto px-4'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
             {/* Tentang Kami */}
-            <div className='flex flex-col'>
+            <div className='flex flex-col min-w-[250px]'>
               <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Tentang Kami</h4>
               <p className='text-gray-400'>Sistem Layanan Terpadu Rutan Wonosobo adalah sebuah sistem yang mengintegrasikan berbagai layanan publik yang ada di Rutan Wonosobo dalam satu platform.</p>
             </div>
 
             {/* Kontak Kami */}
-            <div className='flex flex-col'>
+            <div className='flex flex-col min-w-[250px]'>
               <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Kontak Kami</h4>
               <div className='space-y-2'>
                 <p className='text-gray-400'>
@@ -59,7 +59,7 @@ export default function Footer () {
             </div>
 
             {/* Halaman */}
-            <div className='flex flex-col'>
+            <div className='flex flex-col min-w-[250px]'>
               <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Halaman</h4>
               <ul className='list-disc list-inside space-y-2 pl-4'>
                 {footerLinks.map((link) => (
@@ -73,7 +73,7 @@ export default function Footer () {
             </div>
 
             {/* Daftar Layanan */}
-            <div className='flex flex-col'>
+            <div className='flex flex-col min-w-[250px]'>
               <h4 className='text-lg font-semibold mb-4 text-white border-b-2 border-gray-600 pb-2 text-center sm:text-left'>Layanan</h4>
               <ul className='list-disc list-inside space-y-2 pl-4'>
                 {servicesData.map((service) => (

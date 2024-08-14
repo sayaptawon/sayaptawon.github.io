@@ -56,24 +56,24 @@ const Testimonial = () => {
       <div className='relative w-full mb-4'>
         <div className='flex items-center justify-center w-full'>
           <button onClick={handlePrev} className='absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-300 transition-colors' aria-label='Previous testimonial' disabled={!isLoaded}>
-            {isLoaded ? <FontAwesomeIcon icon={faChevronLeft} className='text-xl' /> : <div className='w-6 h-6 border-t-2 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full animate-spin'></div>}
+            {isLoaded ? <FontAwesomeIcon icon={faChevronLeft} className='text-xl' /> : <div className='w-6 h-6 border-t-2 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full loading'></div>}
           </button>
-          <div className='w-full mx-auto bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-6'>
-            <div className={`flex flex-col items-center p-4 transition-opacity duration-500 ease-in-out ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-              <div className='mask mask-hexagon mb-4'>{isLoaded ? <img src={photo} alt={`Photo of ${name}`} className='w-36 h-36 mask mask-hexagon object-cover' /> : <div className='w-24 h-24 border-t-4 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full animate-spin'></div>}</div>
+          <div className='testimonial-card flex flex-col justify-center items-center w-full mx-auto bg-white border border-gray-300 rounded-lg shadow-lg overflow-hidden p-6'>
+            <div className='flex flex-col items-center p-4 transition-opacity duration-500 ease-in-out'>
+              <div className='mask mask-circle mb-4'>{isLoaded ? <img src={photo} alt={`Photo of ${name}`} className='w-36 h-36 mask mask-circle object-cover' /> : <div className='w-24 h-24 border-t-4 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full loading'></div>}</div>
               <div className='text-lg font-semibold text-gray-900 mb-2'>{name}</div>
               <div className='flex mb-4'>
                 {[...Array(rating)].map((_, index) => (
                   <span key={index} className='text-yellow-500 text-xl'>
-                    {isLoaded ? <FontAwesomeIcon icon={faStar} /> : <div className='w-6 h-6 border-t-2 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full animate-spin'></div>}
+                    {isLoaded ? <FontAwesomeIcon icon={faStar} /> : <div className='w-6 h-6 border-t-2 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full loading'></div>}
                   </span>
                 ))}
               </div>
-              <p className='text-gray-700 text-center'>{testimonial}</p>
+              <p className='text-gray-700 text-center break-words'>{testimonial}</p>
             </div>
           </div>
           <button onClick={handleNext} className='absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 rounded-full w-10 h-10 flex items-center justify-center shadow-md hover:bg-gray-300 transition-colors' aria-label='Next testimonial' disabled={!isLoaded}>
-            {isLoaded ? <FontAwesomeIcon icon={faChevronRight} className='text-xl' /> : <div className='w-6 h-6 border-t-2 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full animate-spin'></div>}
+            {isLoaded ? <FontAwesomeIcon icon={faChevronRight} className='text-xl' /> : <div className='w-6 h-6 border-t-2 border-transparent border-t-gradient bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full loading'></div>}
           </button>
         </div>
         {isLoaded && (
@@ -84,6 +84,13 @@ const Testimonial = () => {
           </div>
         )}
       </div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .testimonial-card {
+            min-height: 450px;
+          }
+        }
+      `}</style>
     </section>
   );
 };
