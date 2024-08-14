@@ -4,7 +4,16 @@ const metadata = {
   keywords: 'SAYAP TAWON, Rutan Wonosobo, layanan publik',
   robots: 'index, follow',
   icon: 'https://sayaptawon.vercel.app/favicon.svg',
-  ogImage: 'https://sayaptawon.vercel.app/thumbnail.png',
+  ogImage: {
+    url: '/opengraph-image',
+    width: 1200,
+    height: 630,
+  },
+  twitterImage: {
+    url: '/twitter-image',
+    width: 1200,
+    height: 630,
+  },
   canonicalUrl: 'https://sayaptawon.vercel.app/',
   author: 'Humas Rutan Wonosobo',
   themeColor: '#1f2937',
