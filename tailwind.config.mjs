@@ -15,7 +15,7 @@ const config = {
     themes: true,
     base: true,
     utils: true,
-    logs: true,
+    logs: false,
     rtl: false,
     prefix: '',
     darkTheme: 'night',
