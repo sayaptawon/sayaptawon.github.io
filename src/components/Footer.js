@@ -108,7 +108,10 @@ export default function Footer () {
         <div className='container mx-auto px-4 text-center'>
           <div className='text-sm'>
             <p className='mb-2'>
-              Copyright &copy; 2024 <span className='text-white font-semibold'>Humas Rutan Wonosobo</span>
+              Copyright &copy; 2024{' '}
+              <Link href='/' className='text-white font-semibold'>
+                Humas Rutan Wonosobo
+              </Link>
             </p>
             <p>
               Template by{' '}

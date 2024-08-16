@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { collection, onSnapshot } from 'firebase/firestore';
-import { firestore } from '@/lib/firebaseConfig';
+import { firestore } from '@/lib/firebase';
 
 const StatisticsWBP = () => {
   const [data, setData] = useState([]);

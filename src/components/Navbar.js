@@ -45,8 +45,8 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     <nav data-theme='night' className='shadow-sm md:shadow-md lg:shadow-lg sticky top-0 z-50'>
       <div className='container mx-auto flex items-center justify-between px-4 py-3'>
         <a href='/' className='flex items-center text-xl font-bold btn btn-neutral'>
-          {fontAwesomeLoaded && <FontAwesomeIcon icon={faReact} size='lg' className='mr-2' />}
-          {navbarData.brand}
+          {fontAwesomeLoaded && <FontAwesomeIcon icon={faReact} size='lg' className='text-primary' />}
+          <span className='hidden md:inline lg:inline'>{navbarData.brand}</span>
         </a>
         {/* Mobile Navbar */}
         <div className='lg:hidden relative'>

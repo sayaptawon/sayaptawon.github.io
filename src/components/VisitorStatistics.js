@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import { ref, onValue, off, push, set } from 'firebase/database';
-import { database } from '@/lib/firebaseConfig';
+import { database } from '@/lib/firebase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDay, faCalendarAlt, faCalendarWeek, faUser } from '@fortawesome/free-solid-svg-icons';
 import { format, subDays, startOfWeek, startOfMonth } from 'date-fns';
