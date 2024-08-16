@@ -41,7 +41,7 @@ function BantuanHukum () {
 
         {/* Konten Utama */}
         <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify mb-6'>
-          <Image src='/legal-aid.webp' alt='Bantuan Hukum' width={1200} height={600} className='w-full rounded-lg shadow' />
+          <Image src='/assets/images/legal-aid.webp' alt='Bantuan Hukum' width={1200} height={600} className='w-full rounded-lg shadow' />
           <p>Kemenkumham melalui BPHN memberikan layanan bantuan hukum. Pemberian Bantuan Hukum kepada warga negara merupakan wujud nyata dari implementasi negara kita sebagai negara hukum. Negara yang mengakui dan melindungi serta menjamin hak asasi warga negara akan kebutuhan akses seluas-luasnya terhadap keadilan, dan kesamaan di hadapan hukum.</p>
         </div>
 

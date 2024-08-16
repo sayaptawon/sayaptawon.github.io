@@ -34,7 +34,7 @@ const Kesehatan = () => {
 
         {/* Isi Halaman */}
         <div className='mb-6'>
-          <Image src='/medical-center.webp' alt='Medical Center' width={1200} height={600} className='w-full rounded-lg shadow' />
+          <Image src='/assets/images/medical-center.webp' alt='Medical Center' width={1200} height={600} className='w-full rounded-lg shadow' />
         </div>
 
         <div className='text-base sm:text-lg leading-relaxed space-y-6 text-justify'>

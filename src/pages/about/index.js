@@ -97,7 +97,7 @@ const About = () => {
 
         {/* Gambar */}
         <div className='mb-8'>
-          <Image src='/thumbnail.png' alt='Thumbnail Sayap Tawon' width={1200} height={600} className='w-full h-auto rounded-lg shadow-lg' />
+          <Image src='/preview.png' alt='Preview Sayap Tawon' width={1200} height={600} className='w-full h-auto rounded-lg shadow-lg' />
         </div>
 
         {/* Isi Halaman */}
