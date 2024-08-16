@@ -5,12 +5,12 @@ const metadata = {
   robots: 'index, follow',
   icon: 'https://sayaptawon.vercel.app/favicon.svg',
   ogImage: {
-    url: 'https://sayaptawon.vercel.app/thumbnail.png',
+    url: 'https://sayaptawon.vercel.app/preview.png',
     width: '1200',
     height: '630',
   },
   twitterImage: {
-    url: 'https://sayaptawon.vercel.app/thumbnail.png',
+    url: 'https://sayaptawon.vercel.app/preview.png',
     width: '1200',
     height: '675',
   },
