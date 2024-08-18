@@ -8,7 +8,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import metadata from '@/config/metadata';
 
-// Dynamic import for non-essential components
 const Notification = dynamic(() => import('@/components/Notification'), {
   ssr: false,
 });
