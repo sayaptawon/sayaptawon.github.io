@@ -9,7 +9,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'dl.snapcdn.app',
+        hostname: 'firebasestorage.googleapis.com',
         pathname: '/**',
       },
     ],
@@ -19,6 +19,19 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  experimental: {
+    turbo: {
+      resolveExtensions: [
+        '.mdx',
+        '.tsx',
+        '.ts',
+        '.jsx',
+        '.js',
+        '.mjs',
+        '.json',
+      ],
+    },
   },
 };
 
