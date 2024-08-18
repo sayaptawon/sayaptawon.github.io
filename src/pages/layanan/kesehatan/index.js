@@ -69,6 +69,7 @@ const Kesehatan = () => {
             width={1200}
             height={600}
             className='w-full rounded-lg shadow'
+            priority
           />
         </div>
 

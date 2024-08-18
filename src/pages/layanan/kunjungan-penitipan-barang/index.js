@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import Layout from '@/pages/layout';
 import Link from 'next/link';
@@ -103,6 +105,7 @@ const KunjunganPenitipanBarang = () => {
                 height={600}
                 className='w-full h-auto object-cover rounded-lg shadow-lg'
                 unoptimized
+                priority
               />
               {/* Badge */}
               <div className='absolute top-2 right-2 px-2 py-1 badge-primary text-primary-content rounded-badge text-sm font-bold'>

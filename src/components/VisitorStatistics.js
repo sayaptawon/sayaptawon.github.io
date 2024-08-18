@@ -65,7 +65,11 @@ const VisitorStatistics = () => {
       processVisitorData(data);
     };
 
-    onValue(visitorsRef, handleValueChange);
+    try {
+      onValue(visitorsRef, handleValueChange);
+    } catch (error) {
+      console.error('Error subscribing to Firebase data:', error);
+    }
 
     return () => {
       off(visitorsRef, 'value', handleValueChange);

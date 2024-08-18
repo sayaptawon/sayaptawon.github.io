@@ -29,6 +29,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
   const menuRef = useRef(null);
   const pathname = usePathname();
   const [isDesktop, setIsDesktop] = useState(false);
+  const [iconsLoaded, setIconsLoaded] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,6 +63,10 @@ const Navbar = ({ isOpen, setIsOpen }) => {
     };
   }, [setIsOpen, pathname]);
 
+  useEffect(() => {
+    setIconsLoaded(true);
+  }, []);
+
   const activeLink = (href) =>
     pathname === href ? 'bg-primary text-neutral' : '';
 
@@ -73,11 +78,13 @@ const Navbar = ({ isOpen, setIsOpen }) => {
       <div className='container mx-auto flex items-center justify-between px-4 py-3'>
         <Link href='/'>
           <div className='flex items-center text-xl font-bold btn btn-neutral'>
-            <FontAwesomeIcon
-              icon={faReact}
-              size='lg'
-              className='text-primary'
-            />
+            {iconsLoaded && (
+              <FontAwesomeIcon
+                icon={faReact}
+                size='lg'
+                className='text-primary'
+              />
+            )}
             <span className='hidden md:inline lg:inline'>
               {navbarData.brand}
             </span>
@@ -85,12 +92,14 @@ const Navbar = ({ isOpen, setIsOpen }) => {
         </Link>
         {/* Mobile Navbar */}
         <div className='lg:hidden relative'>
-          <button
-            className='btn btn-square btn-neutral'
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <FontAwesomeIcon icon={faBars} size='lg' />
-          </button>
+          {iconsLoaded && (
+            <button
+              className='btn btn-square btn-neutral'
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <FontAwesomeIcon icon={faBars} size='lg' />
+            </button>
+          )}
           <div
             ref={menuRef}
             className={`fixed top-0 left-0 w-full h-screen bg-base-300 bg-opacity-100 transform ${
@@ -100,12 +109,14 @@ const Navbar = ({ isOpen, setIsOpen }) => {
             <div className='bg-base-100 p-4'>
               <div className='flex justify-between items-center'>
                 <h2 className='text-2xl font-bold text-white'>Menu</h2>
-                <button
-                  className='btn btn-circle btn-neutral'
-                  onClick={() => setIsOpen(false)}
-                >
-                  <FontAwesomeIcon icon={faTimes} size='lg' />
-                </button>
+                {iconsLoaded && (
+                  <button
+                    className='btn btn-circle btn-neutral'
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <FontAwesomeIcon icon={faTimes} size='lg' />
+                  </button>
+                )}
               </div>
             </div>
             <div className='flex flex-col items-center pt-6'>

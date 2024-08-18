@@ -59,7 +59,12 @@ const Testimonial = () => {
     };
   }, [resetInterval]);
 
-  const { name, photo, testimonial, rating } = testimonials[currentIndex] || {};
+  const {
+    name = '',
+    photo = '',
+    testimonial = '',
+    rating = 0,
+  } = testimonials[currentIndex] || {};
 
   if (!testimonials.length) return null;
 

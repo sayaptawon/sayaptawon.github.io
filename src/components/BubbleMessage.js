@@ -7,15 +7,20 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 export default function BubbleMessage () {
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
-  const [isSent, setIsSent] = useState(false);
 
   useEffect(() => {
     setIsSent(false);
+  }, []);
+
+  useEffect(() => {
+    setIsPageLoaded(true);
   }, []);
 
   const handleChange = useCallback((event) => {
@@ -50,6 +55,10 @@ export default function BubbleMessage () {
       setIsSent(false);
     }
   }, [isSent]);
+
+  if (!isPageLoaded) {
+    return null;
+  }
 
   return (
     <section data-theme='light'>
