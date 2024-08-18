@@ -1,13 +1,11 @@
 import { NextResponse } from 'next/server';
 
-// Daftar asal yang diizinkan
 const allowedOrigins = ['https://sayaptawon.github.io', 'https://sayaptawon.vercel.app'];
 
-// Opsi CORS
 const corsOptions = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
-  'Access-Control-Allow-Credentials': 'true', // Mengizinkan pengiriman kredensial
+  'Access-Control-Allow-Credentials': 'true',
 };
 
 export function middleware(request) {
@@ -37,10 +35,9 @@ export function middleware(request) {
   return response;
 }
 
-// Konfigurasi matcher untuk menentukan rute mana yang menggunakan middleware ini
 export const config = {
   matcher: [
-    '/api/:path*', // Menetapkan middleware untuk rute API
-    '/((?!api|_next/static|_next/image|favicon.ico).*)', // Menetapkan middleware untuk semua rute kecuali rute API, rute statis, dan favicon.ico
+    '/api/:path*',
+    '/((?!api|_next/static|_next/image|favicon.ico).*)',
   ],
 };
