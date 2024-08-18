@@ -1,8 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, setLogLevel } from 'firebase/firestore';
 
-// Gunakan environment variables yang sudah diatur di Vercel
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -16,6 +15,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// Ekspor layanan Firebase
 export const database = getDatabase(app);
 export const firestore = getFirestore(app);
+
+if (process.env.NODE_ENV === 'development') {
+  setLogLevel('silent');
+} else {
+  setLogLevel('silent');
+}
