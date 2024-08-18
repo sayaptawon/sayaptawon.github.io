@@ -2,6 +2,10 @@
   "brand": "SAYAP TAWON",
   "links": [
     {
+      "name": "Home",
+      "href": "/"
+    },
+    {
       "name": "About",
       "href": "/about"
     },
@@ -10,16 +14,8 @@
       "href": "/contact"
     },
     {
-      "name": "Disclaimer",
-      "href": "/disclaimer"
-    },
-    {
-      "name": "Kebijakan Privasi",
-      "href": "/privacy-policy"
-    },
-    {
-      "name": "Syarat dan Ketentuan",
-      "href": "/terms-conditions"
+      "name": "Layanan",
+      "href": "/layanan"
     }
   ]
 }
