@@ -1,25 +1,45 @@
 'use client';
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  Suspense,
+  lazy,
+} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faExclamationCircle, faTimes } from '@fortawesome/free-solid-svg-icons';
-import notificationData from '@/data/notificationData.json';
+import {
+  faBell,
+  faExclamationCircle,
+  faTimes,
+} from '@fortawesome/free-solid-svg-icons';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { firestore } from '@/lib/firebase';
+
+const NotificationModal = lazy(() => import('@/components/NotificationModal'));
 
 const Notification = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [notifications, setNotifications] = useState([]);
   const [showNoNotificationModal, setShowNoNotificationModal] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
-  const modalRef = useRef();
-  const shakeIntervalRef = useRef();
+  const modalRef = useRef(null);
+  const shakeIntervalRef = useRef(null);
 
   useEffect(() => {
-    const loadNotifications = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setNotifications(notificationData);
-    };
+    const unsubscribe = onSnapshot(
+      collection(firestore, 'notifications'),
+      (snapshot) => {
+        const notificationsList = snapshot.docs.map((doc) => doc.data());
+        setNotifications(notificationsList);
+      },
+      (error) => {
+        console.error('Error fetching notifications: ', error);
+      },
+    );
 
-    loadNotifications();
+    return () => unsubscribe();
   }, []);
 
   const startShaking = useCallback(() => {
@@ -39,15 +59,15 @@ const Notification = () => {
     } else {
       stopShaking();
     }
-
-    return () => {
-      stopShaking();
-    };
+    return () => stopShaking();
   }, [isModalOpen, startShaking, stopShaking]);
 
   const handleNotificationClick = useCallback(() => {
     stopShaking();
-    if (notifications.length === 0 || notifications.every((notification) => !notification.content)) {
+    if (
+      notifications.length === 0 ||
+      notifications.every((notification) => !notification.content)
+    ) {
       setShowNoNotificationModal(true);
     } else {
       setIsModalOpen(true);
@@ -75,64 +95,62 @@ const Notification = () => {
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
     }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isModalOpen, showNoNotificationModal, handleClickOutside]);
 
-  const shouldShowBadge = notifications.some((notification) => notification.content);
+  const shouldShowBadge = notifications.some(
+    (notification) => notification.content,
+  );
 
   return (
     <section data-theme='light'>
-      {/* Notification Button */}
       {notifications.length > 0 && (
         <div className='fixed bottom-20 left-2 z-40'>
-          <button className='btn btn-circle btn-primary relative shadow-lg transition-transform duration-300 ease-in-out hover:shadow-2xl hover:bg-primary-focus' onClick={handleNotificationClick}>
-            <FontAwesomeIcon icon={faBell} className={`text-xl text-white ${isShaking && shouldShowBadge ? 'animate-bell-shake' : ''}`} />
+          <button
+            className='btn btn-circle btn-primary relative shadow-lg transition-transform duration-300 ease-in-out hover:shadow-2xl hover:bg-primary-focus'
+            onClick={handleNotificationClick}
+          >
+            <FontAwesomeIcon
+              icon={faBell}
+              className={`text-xl text-white ${
+                isShaking && shouldShowBadge ? 'animate-bell-shake' : ''
+              }`}
+            />
             {shouldShowBadge && (
               <span className='absolute top-0 right-0 transform translate-x-2 -translate-y-2 w-5 h-5 bg-white text-red-500 text-xs font-bold rounded-full flex items-center justify-center shadow-md'>
-                <FontAwesomeIcon icon={faExclamationCircle} className='text-sm' />
+                <FontAwesomeIcon
+                  icon={faExclamationCircle}
+                  className='text-sm'
+                />
               </span>
             )}
           </button>
         </div>
       )}
-
-      {/* Modal for Notifications */}
       {isModalOpen && (
-        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50'>
-          <div ref={modalRef} className='bg-white p-6 rounded-lg shadow-lg w-full max-w-2xl relative transition-transform duration-300 ease-in-out transform scale-100 modal-fade-in'>
-            <button className='absolute top-4 right-4 w-8 h-8 flex items-center justify-center bg-gray-300 rounded-full text-gray-600 hover:bg-gray-400 transition-colors duration-300' onClick={closeModal}>
-              <FontAwesomeIcon icon={faTimes} className='text-xl' />
-            </button>
-            <h2 className='text-2xl font-semibold mb-4 text-center text-gray-800'>Informasi</h2>
-            <hr className='my-4 border-gray-300' />
-            <div>
-              {notifications.length === 0 || notifications.every((notification) => !notification.content) ? (
-                <p className='text-center text-gray-600'>Tidak ada pengumuman.</p>
-              ) : (
-                notifications.map((notification, index) => (
-                  <div key={index} className='mb-4'>
-                    {notification.type === 'text' && <p className='text-gray-800'>{notification.content}</p>}
-                    {notification.type === 'image' && <img src={notification.content} alt='Notification' className='w-full mb-2 rounded-lg shadow-md' />}
-                    {notification.type === 'html' && <div dangerouslySetInnerHTML={{ __html: notification.content }} />}
-                  </div>
-                ))
-              )}
-            </div>
-          </div>
-        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+          <NotificationModal
+            isModalOpen={isModalOpen}
+            closeModal={closeModal}
+            notifications={notifications}
+          />
+        </Suspense>
       )}
-
-      {/* Modal for No Notifications */}
       {showNoNotificationModal && (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50'>
-          <div ref={modalRef} className='bg-gray-100 p-6 rounded-lg shadow-lg w-full max-w-md relative transition-transform duration-300 ease-in-out transform scale-100 modal-fade-in'>
-            <button className='absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full text-gray-600 hover:bg-gray-400 transition-colors duration-300' onClick={closeModal}>
+          <div
+            ref={modalRef}
+            className='bg-gray-100 p-6 rounded-lg shadow-lg w-full max-w-md relative transition-transform duration-300 ease-in-out transform scale-100 modal-fade-in'
+          >
+            <button
+              className='absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-gray-300 rounded-full text-gray-600 hover:bg-gray-400 transition-colors duration-300'
+              onClick={closeModal}
+            >
               <FontAwesomeIcon icon={faTimes} className='text-xl' />
             </button>
-            <h2 className='text-2xl font-semibold mb-4 text-center text-gray-800'>Informasi</h2>
+            <h2 className='text-2xl font-semibold mb-4 text-center text-gray-800'>
+              Informasi
+            </h2>
             <hr className='my-4 border-gray-300' />
             <p className='text-center text-gray-600'>Tidak ada pengumuman.</p>
           </div>

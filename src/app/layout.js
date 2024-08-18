@@ -19,7 +19,6 @@ export default function RootLayout ({ children }) {
         <meta name='keywords' content={metadata.keywords} />
         <meta name='robots' content={metadata.robots} />
         <meta name='author' content={metadata.author} />
-        <meta name='theme-color' content={metadata.themeColor} />
         <meta name='viewport' content={metadata.viewport} />
         <link rel='icon' href={metadata.icon} type='image/x-icon' sizes='any' />
 
@@ -38,8 +37,14 @@ export default function RootLayout ({ children }) {
         <meta name='twitter:title' content={metadata.title} />
         <meta name='twitter:description' content={metadata.description} />
         <meta name='twitter:image' content={metadata.twitterImage.url} />
-        <meta name='twitter:image:width' content={metadata.twitterImage.width} />
-        <meta name='twitter:image:height' content={metadata.twitterImage.height} />
+        <meta
+          name='twitter:image:width'
+          content={metadata.twitterImage.width}
+        />
+        <meta
+          name='twitter:image:height'
+          content={metadata.twitterImage.height}
+        />
 
         {/* Canonical URL */}
         <link rel='canonical' href={metadata.canonicalUrl} />
@@ -66,7 +71,9 @@ export default function RootLayout ({ children }) {
         {/* Navbar */}
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
         {/* Main Content */}
-        <main className='transition-all duration-500 ease-in-out'>{children}</main>
+        <main className='transition-all duration-500 ease-in-out'>
+          {children}
+        </main>
         {/* Footer */}
         <Footer />
       </body>

@@ -2,15 +2,28 @@
 
 import React, { useState } from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 import '@/styles/globals.css';
 import Navbar from '@/components/Navbar';
-import Notification from '@/components/Notification';
-import BubbleMessage from '@/components/BubbleMessage';
-import BackToTop from '@/components/BackToTop';
 import Footer from '@/components/Footer';
 import metadata from '@/config/metadata';
 
-const Layout = ({ children, title = metadata.title, description = metadata.description }) => {
+// Dynamic import for non-essential components
+const Notification = dynamic(() => import('@/components/Notification'), {
+  ssr: false,
+});
+const BubbleMessage = dynamic(() => import('@/components/BubbleMessage'), {
+  ssr: false,
+});
+const BackToTop = dynamic(() => import('@/components/BackToTop'), {
+  ssr: false,
+});
+
+const Layout = ({
+  children,
+  title = metadata.title,
+  description = metadata.description,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const fullTitle = `${title} - SAYAP TAWON`;
@@ -23,7 +36,6 @@ const Layout = ({ children, title = metadata.title, description = metadata.descr
         <meta name='keywords' content={metadata.keywords} />
         <meta name='robots' content={metadata.robots} />
         <meta name='author' content={metadata.author} />
-        <meta name='theme-color' content={metadata.themeColor} />
 
         {/* Open Graph Meta Tags */}
         <meta property='og:title' content={fullTitle} />
@@ -50,15 +62,13 @@ const Layout = ({ children, title = metadata.title, description = metadata.descr
       <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
 
       {/* Main Content */}
-      <main className='transition-all duration-500 ease-in-out'>{children}</main>
+      <main className='transition-all duration-500 ease-in-out'>
+        {children}
+      </main>
 
-      {/* Notification */}
+      {/* Dynamic Components */}
       <Notification />
-
-      {/* BubbleMessage */}
       <BubbleMessage />
-
-      {/* BackToTop */}
       <BackToTop />
 
       {/* Footer */}
