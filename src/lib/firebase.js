@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
-import { getFirestore, setLogLevel } from 'firebase/firestore';
+import { initializeFirestore, setLogLevel } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,11 +15,16 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const database = getDatabase(app);
-export const firestore = getFirestore(app);
+const firestoreInstance = initializeFirestore(app, {
+  cacheSizeBytes: 104857600,
+  experimentalForceLongPolling: true,
+});
 
 if (process.env.NODE_ENV === 'development') {
   setLogLevel('silent');
 } else {
-  setLogLevel('silent');
+  setLogLevel('error');
 }
+
+export const database = getDatabase(app);
+export const firestore = firestoreInstance;
