@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import Layout from '@/pages/layout';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,8 +9,23 @@ import {
   faCheckCircle,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+import AlurPengurusan from '@/components/AlurPengurusan';
 
 const ReintegrasiSosial = () => {
+  const [isPageLoaded, setIsPageLoaded] = useState(false);
+
+  useEffect(() => {
+    // Set the state to true once the page has fully loaded
+    const handleLoad = () => setIsPageLoaded(true);
+
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
+    }
+  }, []);
+
   const points = [
     'Memulihkan fungsi sosial individu dalam masyarakat',
     'Membangun kembali hubungan yang harmonis dalam masyarakat',
@@ -24,7 +41,6 @@ const ReintegrasiSosial = () => {
       description='Informasi mengenai Program Reintegrasi Sosial oleh Rutan Wonosobo.'
     >
       <section data-theme='corporate' className='w-full p-4 sm:p-6 lg:p-8'>
-        {/* Breadcrumb */}
         <div className='w-full mb-6'>
           <nav className='w-full'>
             <div className='mx-auto bg-base-100 p-4 rounded shadow border border-gray-200'>
@@ -34,15 +50,19 @@ const ReintegrasiSosial = () => {
                     href='/'
                     className='flex items-center px-2 py-1 text-gray-600 hover:text-blue-900 transition-colors duration-200'
                   >
-                    <FontAwesomeIcon icon={faHome} className='mr-2' />
+                    {isPageLoaded && (
+                      <FontAwesomeIcon icon={faHome} className='mr-2' />
+                    )}
                     Beranda
                   </Link>
                 </li>
                 <li>
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className='mx-2 text-gray-500'
-                  />
+                  {isPageLoaded && (
+                    <FontAwesomeIcon
+                      icon={faChevronRight}
+                      className='mx-2 text-gray-500'
+                    />
+                  )}
                 </li>
                 <li>
                   <Link
@@ -53,10 +73,12 @@ const ReintegrasiSosial = () => {
                   </Link>
                 </li>
                 <li>
-                  <FontAwesomeIcon
-                    icon={faChevronRight}
-                    className='mx-2 text-gray-500'
-                  />
+                  {isPageLoaded && (
+                    <FontAwesomeIcon
+                      icon={faChevronRight}
+                      className='mx-2 text-gray-500'
+                    />
+                  )}
                 </li>
                 <li>
                   <span className='px-2 py-1 text-gray-900'>
@@ -68,7 +90,6 @@ const ReintegrasiSosial = () => {
           </nav>
         </div>
 
-        {/* Judul Halaman */}
         <header className='mb-6'>
           <h1 className='text-3xl sm:text-4xl font-extrabold mb-4 text-center text-primary'>
             Reintegrasi Sosial
@@ -90,10 +111,12 @@ const ReintegrasiSosial = () => {
           <ul className='list-none pl-0 space-y-2'>
             {points.map((text, index) => (
               <li key={index} className='flex items-center'>
-                <FontAwesomeIcon
-                  icon={faCheckCircle}
-                  className='text-green-500 mr-2'
-                />
+                {isPageLoaded && (
+                  <FontAwesomeIcon
+                    icon={faCheckCircle}
+                    className='text-green-500 mr-2'
+                  />
+                )}
                 {text}
               </li>
             ))}
@@ -114,6 +137,7 @@ const ReintegrasiSosial = () => {
             pemasyarakatan dewasa dan klien pemasyarakatan anak.
           </p>
         </div>
+        <AlurPengurusan />
       </section>
     </Layout>
   );
