@@ -74,7 +74,7 @@ const Testimonial = () => {
       className='relative p-4 border-b border-gray-200 w-full'
     >
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>
-        Testimonials
+        Testimonial Pengguna
       </h2>
       <div className='relative w-full mb-4'>
         <div className='flex items-center justify-center w-full'>

@@ -130,7 +130,7 @@ const Gallery = () => {
       className='gallery-container p-4 mx-auto border-b border-gray-200'
     >
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>
-        Gallery
+        Album
       </h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-4'>
         {visibleImages.map((image, index) => (

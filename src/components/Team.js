@@ -10,7 +10,7 @@ const Team = () => {
     >
       <div className='text-center mb-8'>
         <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4'>
-          Our Team
+          Tim kami
         </h2>
         <p className='text-lg text-base-content'>
           Ketahui lebih lanjut tentang orang-orang di balik proyek ini

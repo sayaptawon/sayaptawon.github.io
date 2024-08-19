@@ -15,7 +15,7 @@ const Locations = () => {
       className='relative p-4 border-b border-gray-200'
     >
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>
-        Location
+        Lokasi
       </h2>
       <div className='w-full max-w-full mx-auto mb-4'>
         <button

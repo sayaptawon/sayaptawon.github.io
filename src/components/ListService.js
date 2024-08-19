@@ -22,7 +22,7 @@ const services = servicesData.map((service) => ({
   color: {
     'Kunjungan dan Penitipan Barang': 'bg-blue-100 text-blue-500',
     'Reintegrasi Sosial': 'bg-green-100 text-green-500',
-    'Kesehatan': 'bg-red-100 text-red-500',
+    Kesehatan: 'bg-red-100 text-red-500',
     'Bantuan Hukum': 'bg-yellow-100 text-yellow-500',
   }[service.title],
 }));
@@ -31,7 +31,7 @@ const ListService = () => {
   return (
     <section data-theme='corporate' className='p-4 border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-4 text-center'>
-        List of Services
+        Daftar Layanan
       </h2>
       <div
         data-theme='light'
