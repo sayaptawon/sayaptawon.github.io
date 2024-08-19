@@ -1,14 +1,19 @@
 import { NextResponse } from 'next/server';
 
-const allowedOrigins = ['https://sayaptawon.github.io', 'https://sayaptawon.vercel.app'];
+const allowedOrigins = [
+  'https://sayaptawon.github.io',
+  'https://sayaptawon.vercel.app',
+];
 
 const corsOptions = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, X-Requested-With',
+  'Access-Control-Allow-Headers':
+    'Content-Type, Authorization, X-Requested-With',
   'Access-Control-Allow-Credentials': 'true',
 };
 
-export function middleware(request) {
+export function middleware (request) {
+  const { pathname } = request.nextUrl;
   const origin = request.headers.get('origin') ?? '';
   const isAllowedOrigin = allowedOrigins.includes(origin);
   const isPreflight = request.method === 'OPTIONS';
@@ -19,6 +24,11 @@ export function middleware(request) {
       ...corsOptions,
     };
     return NextResponse.json({}, { headers: preflightHeaders });
+  }
+
+  if (!pathname.endsWith('/') && !pathname.includes('.')) {
+    const newUrl = `${request.nextUrl.origin}${pathname}/`;
+    return NextResponse.redirect(newUrl);
   }
 
   const response = NextResponse.next();
@@ -36,8 +46,5 @@ export function middleware(request) {
 }
 
 export const config = {
-  matcher: [
-    '/api/:path*',
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
+  matcher: ['/api/:path*', '/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };
