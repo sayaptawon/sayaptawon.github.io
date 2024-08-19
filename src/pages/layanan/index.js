@@ -16,7 +16,7 @@ import servicesData from '@/data/servicesData.json';
 const iconMap = {
   'Kunjungan dan Penitipan Barang': faBoxOpen,
   'Reintegrasi Sosial': faHandshake,
-  Kesehatan: faStethoscope,
+  'Kesehatan': faStethoscope,
   'Bantuan Hukum': faBalanceScale,
 };
 
