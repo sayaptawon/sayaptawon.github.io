@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getDatabase } from 'firebase/database';
 import { initializeFirestore, setLogLevel } from 'firebase/firestore';
+import { getAnalytics, isSupported } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -26,5 +27,13 @@ if (process.env.NODE_ENV === 'development') {
   setLogLevel('error');
 }
 
+let analytics;
+isSupported().then((supported) => {
+  if (supported) {
+    analytics = getAnalytics(app);
+  }
+});
+
 export const database = getDatabase(app);
 export const firestore = firestoreInstance;
+export const analyticsInstance = analytics;
