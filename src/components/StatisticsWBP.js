@@ -50,14 +50,14 @@ const StatisticsWBP = () => {
   }, [processData]);
 
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
       <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6 text-center'>
         Data Warga Binaan Pemasyarakatan
       </h2>
       <div className='bg-transparent'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-2'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           {/* Tabel Tahanan */}
-          <div className='bg-white shadow-md rounded-lg'>
+          <div className='bg-white shadow-md rounded-lg border'>
             <h3 className='text-lg font-semibold text-primary text-center p-4 border-b'>
               Tahanan
             </h3>
@@ -87,7 +87,7 @@ const StatisticsWBP = () => {
             </div>
           </div>
           {/* Tabel Narapidana */}
-          <div className='bg-white shadow-md rounded-lg'>
+          <div className='bg-white shadow-md rounded-lg border'>
             <h3 className='text-lg font-semibold text-primary text-center p-4 border-b'>
               Narapidana
             </h3>
@@ -130,7 +130,7 @@ const StatisticsWBP = () => {
           </table>
         </div>
         <div className='mt-4 text-center'>
-          <p className='text-gray-600 small'>
+          <p className='text-gray-600 text-sm'>
             Data terakhir diperbarui pada: {lastUpdated}
           </p>
         </div>

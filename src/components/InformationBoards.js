@@ -3,11 +3,11 @@ import data from '@/data/informationBoardsData.json';
 
 const InformationBoards = () => {
   return (
-    <section data-theme='corporate' className='p-6 border-b border-gray-200'>
-      <div className='grid gap-2 md:grid-cols-2'>
+    <section data-theme='corporate' className='p-4 border-b border-gray-200'>
+      <div className='grid gap-6 md:grid-cols-2'>
         {/* Tabel Jam Layanan */}
-        <div className='bg-white shadow-lg rounded-lg'>
-          <h3 className='text-lg md:text-xl font-semibold text-primary mb-4 text-center'>
+        <div className='bg-white shadow-lg rounded-lg border'>
+          <h3 className='text-lg md:text-xl font-semibold text-primary my-4 text-center'>
             {data.informationBoards[0].title}
           </h3>
           <div className='overflow-x-auto'>
@@ -38,8 +38,8 @@ const InformationBoards = () => {
           </div>
         </div>
         {/* Tabel Hari Kunjungan */}
-        <div className='bg-white shadow-lg rounded-lg'>
-          <h3 className='text-lg md:text-xl font-semibold text-primary mb-4 text-center'>
+        <div className='bg-white shadow-lg rounded-lg border'>
+          <h3 className='text-lg md:text-xl font-semibold text-primary my-4 text-center'>
             {data.informationBoards[1].title}
           </h3>
           <div className='overflow-x-auto'>

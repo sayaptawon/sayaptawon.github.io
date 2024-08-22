@@ -143,7 +143,7 @@ const Gallery = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className='w-full h-full object-contain rounded-lg transition-opacity duration-300'
+                className='w-full h-full object-contain rounded-lg border transition-opacity duration-300'
                 loading='lazy'
               />
             </div>

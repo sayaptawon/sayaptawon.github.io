@@ -20,7 +20,7 @@ const Team = () => {
         {teamData.map((member, index) => (
           <div
             key={index}
-            className='card bg-gradient-to-r from-blue-500 to-teal-500 text-base-content shadow-md transition-shadow duration-300 hover:shadow-lg'
+            className='card bg-gradient-to-r from-blue-500 to-teal-500 text-base-content shadow-md border transition-shadow duration-300 hover:shadow-lg'
           >
             <figure className='relative w-full h-40 flex items-center justify-center'>
               <div className='mask mask-circle w-24 h-24 flex items-start justify-center'>
